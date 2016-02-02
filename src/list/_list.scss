@@ -25,26 +25,35 @@
 }
 
 .mdl-list__item {
-  @include typo-body-1();
+  @include typo-subhead();
+  line-height: 16px;
   display: flex;
+  min-height: 48px;
   box-sizing: border-box;
-  height: 48px;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  padding : 16px 16px 20px 16px;
+  padding: 8px;
   cursor: default;
+  color: #343434;
+  overflow: hidden;
+
   & .mdl-list__item-primary-content {
-    order:0;
+    order: 0;
     flex-grow: 2;
     text-decoration: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
 
-    & .material-icons {
-      font-size: 40px;
-      line-height: 0;
-      vertical-align: middle;
-      padding: 0 12px 0 0;
-      display: inline;
+    & .mdl-list__item-icon {
+      float: left;
+      margin-right: 16px;
+    }
+
+    & .mdl-list__item-avatar {
+      float: left;
+      margin-right: 16px;
     }
   }
 
@@ -55,7 +64,6 @@
     & .mdl-list__item-secondary-action label { display: inline; }
     & .mdl-list__item-secondary-info {
       @include typo-caption();
-      margin-bottom: 10px;
       color: $list-supporting-text-text-color;
     }
     & .mdl-list__item-sub-header {
@@ -64,22 +72,51 @@
   }
 }
 
-.mdl-list__item-avatar {
-  height: 56px;
+.mdl-list__item-icon,
+.mdl-list__item-icon.material-icons {
+  height: 32px;
+  width: 32px;
+  font-size: 32px;
+  box-sizing: border-box;
+  color: #757575;
+}
+
+.mdl-list__item-avatar,
+.mdl-list__item-avatar.material-icons {
+  height: 40px;
+  width: 40px;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  // Set a background colour in case the user doesn't provide an image.
+  background-color: #757575;
+  // Set a font size in case the user provides an Material Icon.
+  font-size: 40px;
 }
 
 .mdl-list__item--two-line {
   height: 72px;
 
   & .mdl-list__item-primary-content {
-    & .material-icons {
-      vertical-align: text-bottom;
+    height: 36px;
+    line-height: 20px;
+    display: block;
+
+    & .mdl-list__item-avatar {
+      float: left;
+      margin-right: 16px;
+    }
+
+    & .mdl-list__item-secondary-content {
+      height: 36px;
     }
 
     & .mdl-list__item-sub-title {
-      @include typo-caption();
+      @include typo-body-1();
+      line-height: 18px;
+      color: $list-supporting-text-text-color;
       display: block;
-      padding : 0 0 0 56px;
+      padding: 0;
     }
   }
 }
@@ -88,17 +125,26 @@
   height: 88px;
 
   & .mdl-list__item-primary-content {
-    & .material-icons {
-      vertical-align: text-bottom;
+    height: 52px;
+    line-height: 20px;
+    display: block;
+
+    & .mdl-list__item-avatar {
+      float: left;
+      margin-right: 16px;
     }
   }
 
+  & .mdl-list__item-secondary-content {
+    height: 52px;
+  }
+
   & .mdl-list__item-text-body {
-    @include typo-caption();
+    @include typo-body-1();
+    height: 32px;
+    line-height: 18px;
     color: $list-supporting-text-text-color;
     display: block;
-    height: 24px;
-    padding: 0 0 0 56px;
-    overflow: hidden;
+    padding: 0;
   }
 }
