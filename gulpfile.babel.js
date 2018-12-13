@@ -71,10 +71,7 @@ const SOURCES = [
   // Polyfills/dependencies
   'src/third_party/**/*.js',
   // Base components
-  'src/checkbox/checkbox.js',
-  'src/menu/menu.js',
   'src/progress/progress.js',
-  'src/snackbar/snackbar.js',
   'src/spinner/spinner.js',
   'src/textfield/textfield.js',
   // Complex components (which reuse base components)
